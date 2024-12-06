@@ -404,7 +404,7 @@ module Tourmaline
       )
         request(Array(Tourmaline::Message), "sendMediaGroup", {
           chat_id:                     chat_id,
-          media:                       media.to_json,
+          media:                       media,
           message_thread_id:           message_thread_id,
           disable_notification:        disable_notification,
           protect_content:             protect_content,

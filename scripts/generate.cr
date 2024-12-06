@@ -228,7 +228,7 @@ def write_method(writer : CodeWriter, method : Api::TypeDef)
       writer.indent do
         fields.each_with_index do |field, i|
           field_name = field.name.underscore
-          if field.description.includes?("JSON-serialized")
+          if field.description.includes?("JSON-serialized") && method.name != "sendMediaGroup"
             if field.required
               writer.print("#{field_name}: #{field_name}.to_json")
             else
