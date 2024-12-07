@@ -371,6 +371,9 @@ def main
 ensure
   types_file.try &.close
   methods_file.try &.close
+
+  Process.run("crystal", ["tool", "format", TYPES_OUTPUT], output: STDOUT)
+  Process.run("crystal", ["tool", "format", METHODS_OUTPUT], output: STDOUT)
 end
 
 main()
